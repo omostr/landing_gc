@@ -7,3 +7,16 @@
     width: 30px; 
     height: 30px;
 }
+
+.swiper-wrapper img {
+    width: 100%; 
+}
+
+.onSwiper-form {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: 10;
+    background: rgba(28, 175, 252, 0.85);
+}
