@@ -1,20 +1,46 @@
+body {
+    min-width: 400px;
+}
+
 .swiper-container {
     width: 100%;
     height: 100%;
 }
 
-.swiper-pagination-bullet {
-    width: 25px; 
+
+.swiper-pagination {
+    position: relative;
     height: 25px;
+    top: -27px;
+}
+
+.swiper-pagination-bullet {
+    width: 18px; 
+    height: 18px;
 }
 
 .swiper-wrapper img {
     width: 100%; 
 }
 
-.swiper-pagination {
-    position: absolute;
-    top:0px;
+.onSwiper-form {
+    background: #5a6e8096;
+}
+
+.onSwiper-form .form-group {
+    position: relative;
+    margin-bottom: 2.4rem;
+}
+
+
+
+.onSwiper-form #header-form {
+    color: #ffffff;
+    font-size: 1.7rem;
+}
+
+#map {
+    height: 400px;
 }
 
 
@@ -27,23 +53,65 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .onSwiper-form {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        height: 100%;
-        z-index: 10;
-        background: rgba(28, 175, 252, 0.85);
-    }
+    
 
-    .swiper-pagination {
-        top: inherit;
-    }
- 
   }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {  }
+@media (min-width: 992px) {
+
+
+    .onSwiper-form, .onSwiper-form-wrapper {
+        position: absolute;
+        top: 0px;
+        right: 8%;
+        height: 100%;
+        z-index: 10;
+    }
+
+    .onSwiper-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .onSwiper-form .form-control, .onSwiper-form select.form-control {
+        padding: 0.2rem .6rem;
+        font-size: 0.8rem;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        top: 92%;
+    }
+ 
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+    
+
+    .onSwiper-form .form-group {
+        margin-bottom: 1.4rem;
+    }
+
+    .onSwiper-form .form-control, .onSwiper-form select.form-control {
+        padding: 0.4rem .7rem;
+        font-size: 0.8rem;
+    }
+
+    
+    
+}
+
+/* HD devices (large desktops, 1680px and up) */
+@media (min-width: 1680px) { 
+
+    .onSwiper-form .form-group {
+        margin-bottom: 2rem;
+    }
+    
+    
+    .onSwiper-form .form-control, .onSwiper-form select.form-control {
+        padding: .375rem .75rem;
+        font-size: 1rem;
+    }
+}

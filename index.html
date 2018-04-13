@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>Hello, world!</title>
+    <title>GetConnected Landig Page</title>
   </head>
   <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal">GetConnected Landig Page</h5>
     </div>
     <div class="container-fluid">
       <!-- Slider main container -->
@@ -35,26 +35,33 @@
 
          <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
-        <div class="onSwiper-form p-4 w-20 w-50-md">
-          <form class="w-100">
+        
+        <div class="onSwiper-form px-4 py-1 p-xl-4 w-20 w-50-md">
+          <div id="header-form" class="mb-2 mb-xl-3">MAKE A REQUEST</div>
+          <form class="w-100 needs-validation" novalidate>
             <div class="form-group">
-              <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+              <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name" required>
+              <div class="invalid-tooltip"> The text field is required.</div>
             </div>
             <div class="form-group">
-              <input type="number" class="form-control" id="phone" placeholder="Phone">
+              <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+              <div class="invalid-tooltip"> The text field is required.</div>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" id="email" placeholder="Email" required>
+              <div class="invalid-tooltip"> The email is not a valid email. </div>
             </div>
             <div class="form-group">
-              <input type="date" class="form-control" id="date" placeholder="Date">
+              <input type="date" class="form-control" id="date" placeholder="Date" required>
+              <div class="invalid-tooltip"> The date is required.</div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="manufacturer" placeholder="Manufacturer">
+              <input type="text" class="form-control" id="manufacturer" placeholder="Manufacturer" required>
+              <div class="invalid-tooltip"> The text field is required.</div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="model" placeholder="Model">
+              <input type="text" class="form-control" id="model" placeholder="Model" required>
+              <div class="invalid-tooltip"> The text field is required.</div>
             </div>
             <div class="form-group">
               <select class="form-control" id="year">
@@ -65,14 +72,51 @@
                 <option>2014</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary btn-block btn-outline-dark">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block btn-outline-light">SUBMIT</button>
           </form>
         </div>
-
-       
-
-  
       </div>
+      <div class="my-4" id="map"></div>
+      <script>
+        function initMap() {
+          var naples = new google.maps.LatLng(40.8518, 14.2681);
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: naples
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Naples</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Naples</b>, is one of the oldest continuously inhabited cities in the world.' + 
+            'Bronze Age Greek settlements were established in the Naples area in the second millennium BC.'+
+            'A larger colony – initially known as Parthenope, Παρθενόπη – developed on the Island of Megaride around the' +
+            'ninth century BC, at the end of the Greek Dark Ages. The city was refounded by Cumaeans as Neápolis' +
+            'in the sixth century BC[9] and became a linchpin of Magna Graecia, playing a key role in the merging of Greek' +
+            'culture into Roman society and eventually becoming a cultural centre of the Roman Republic.' +
+            'Naples remained influential after the fall of the Western Roman Empire, serving as the capital of the Duchy' +
+            'of Naples (661–1139) and of the Kingdom of Naples between 1282 and 1816. Thereafter, in union with Sicily,' +
+            'it became the capital of the Two Sicilies until the unification of Italy in 1861.</p>' +
+            '<p>Attribution: Naples, <a href="https://en.wikipedia.org/wiki/Naples">https://en.wikipedia.org/wiki/Naples</a> '+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        infowindow.setPosition(naples);
+        infowindow.open(map);
+
+         map.addListener('zoom_changed', function() {
+          infowindow.open(map);
+        });
+
+    }
+      </script>
+      <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmJ4ZnpHcYp0gN7d-Bg_uuaPzyEu-DdIU&callback=initMap"></script>
       
     </div>
 
@@ -82,23 +126,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
-    <script>
-        var mySwiper = new Swiper ('.swiper-container', {
-          // Optional parameters
-          direction: 'horizontal',
-          loop: true,
-      
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
-          // And if we need scrollbar
-          scrollbar: {
-            el: '.swiper-scrollbar',
-          },
-        })
-        </script>
+    
+    <script src="js/main.js"></script>
+    
+    
 
     
   </body>
