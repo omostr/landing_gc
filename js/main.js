@@ -1,20 +1,17 @@
-(function() {
+$(document).ready(function () {
 'use strict';
 
-    //creation slider object
     var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
         direction: 'horizontal',
         loop: true,
         allowTouchMove: false,
         autoHeight: true,
-
-        // If we need pagination
+    
         pagination: {
             el: '.swiper-pagination',
             clickable: true
         },
-        // And if we need scrollbar
+    
         scrollbar: {
             el: '.swiper-scrollbar',
         },
@@ -42,7 +39,8 @@
         });
     }, false);
 
+
   
 
    
-})();
+});
